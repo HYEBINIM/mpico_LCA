@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EAST</title>
+    <link rel="stylesheet" href="/css/index.css">
+    <script type="text/javascript" src="//code.jquery.com/jquery.min.js"></script>
+</head>
+
+<body>
+    <!-- 전체 판넬 -->
+    <div class="wrapper">
+
+        <!-- 상단바 -->
+        <div class="top_bar">
+            <div class="logo">
+                <a class='logo_item' href="/index.html">EAST</a>
+            </div>
+            <div class="menu">
+                <a class='menu_item active' href="/index.html">대시보드</a>
+                <a class='menu_item' href="/alldata1.php">F/P 데이터</a>
+                <a class='menu_item' href="/alldata2.php">개별 데이터</a>
+                <a class='menu_item' href="/alldata3.php">AI 파라미터</a>
+                <!-- <a class='menu_item' href="/page/set1.html">실시간검사화면</a>
+                <a class='menu_item' href="/page/set2.html">검사이력</a>
+                <a class='menu_item' href="/page/set4.html">사출기화면</a>
+                <a class='menu_item' href="/page/set4.html">로봇화면</a>
+                <a class='menu_item' href="/page/set3.html">풀프루프화면</a>
+                <a class='menu_item' href="/page/set3.html">풀프루프설정</a> -->
+            </div>
+        </div>
+        <!-- /상단바 -->
+
+        <!-- 화면 -->
+        <div class="panel">
+            <!-- 검사 -->
+            <div class="ins box">
+                <div class='title'>최근 검사</div>
+                <div class="ins_body">
+                    <img id='data153'>
+                    <div class="ins_info">
+                        <div class="ins_info_item">
+                            검사날짜
+                            <div class='data_bold' id='data1'></div>
+                        </div>
+                        <div class="ins_info_item">
+                            검사시각
+                            <div class='data_bold' id='data2'></div>
+                        </div>
+                        <div class="ins_info_item">
+                            제품명
+                            <div class='data_bold' id='data3'></div>
+                        </div>
+                        <div class="ins_info_item">
+                            합격여부
+                            <div class='data_bold' id='data4'></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /검사 -->
+
+            <!-- 검사이력 -->
+            <div class="history box">
+                <div class='title'>검사 이력</div>
+                <div class="history_body">
+                    <div class="history_box">
+                        <div class="history_th">
+                            <div>날짜</div>
+                            <div>시간</div>
+                            <div>합격여부</div>
+                            <div>검사CT</div>
+                        </div>
+                        <?php
+                        for ($count = 5; $count <= 44; $count++) {
+                            echo "
+                                <div class='history_td'>
+                                <div class='data_table' id='data" . $count . "' alt='준비중'></div>
+                                ";
+                            $count++;
+                            echo "
+                            <div class='data_table' id='data" . $count . "'></div>
+                            ";
+                            $count++;
+                            echo "
+                                <div class='data_table' id='data" . $count . "'></div>
+                                ";
+                            $count++;
+                            echo "
+                                <div class='data_table' id='data" . $count . "'></div>
+                                </div>
+                                ";
+                        }
+                        ?>
+                    </div>
+                    <div class="history_info">
+                        <div class='history_info_item'>
+                            날짜
+                            <div class='data_bold'><?php echo date('Y-m-d'); ?></div>
+                        </div>
+                        <div class='history_info_item'>
+                            오늘 생산수량
+                            <div class='data_bold' id='data45'></div>
+                        </div>
+                        <div class='history_info_item'>
+                            오늘의 양품
+                            <div class='data_bold' id='data46'></div>
+                        </div>
+                        <div class='history_info_item'>
+                            오늘의 불량
+                            <div class='data_bold' id='data47'></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /검사이력 -->
+
+            <!-- 풀프루프 -->
+            <div class="pf box">
+                <div class='title'>풀프루프</div>
+                <div class="pf_body">
+                    <div class="pf_box">
+                        <div class="box_title">금형1</div>
+                        <div class="circle circle1">
+                            <div class="temp" id='data48'></div>
+                        </div>
+                    </div>
+                    <div class="pf_box">
+                        <div class="box_title">금형2</div>
+                        <div class="circle circle2">
+                            <div class="temp" id='data49'></div>
+                        </div>
+                    </div>
+                    <div class="pf_box">
+                        <div class="box_title">냉각IN</div>
+                        <div class="circle circle3">
+                            <div class="temp" id='data50'></div>
+                        </div>
+                    </div>
+                    <div class="pf_box padding_top">
+                        <div class="box_title">냉각OUT</div>
+                        <div class="circle circle4">
+                            <div class="temp" id='data51'></div>
+                        </div>
+                    </div>
+                    <div class="pf_box padding_top">
+                        <div class="box_title">온수IN</div>
+                        <div class="circle circle5">
+                            <div class="temp" id='data52'></div>
+                        </div>
+                    </div>
+                    <div class="pf_box padding_top">
+                        <div class="box_title">온수OUT</div>
+                        <div class="circle circle6">
+                            <div class="temp" id='data53'></div>
+                        </div>
+                    </div>
+                    <div class="pf_box padding_top">
+                        <div class="box_title">벨트중간</div>
+                        <div class="circle circle7">
+                            <div class="temp" id='data54'></div>
+                        </div>
+                    </div>
+                    <div class="pf_box padding_top">
+                        <div class="box_title">벨트끝</div>
+                        <div class="circle circle8">
+                            <div class="temp" id='data55'></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /풀프루프 -->
+
+            <!-- 사출기 -->
+            <div class="mc">
+                <div class="mc_top">
+                    <div class="title">사출기</div>
+                    <div class="amount">전체수량</div>
+                    <div class='mc_item'>
+                        <div class="mc_item_text" id='data56'></div>
+                    </div>
+                </div>
+                <div class="mc_body">
+                    <!-- 기본 -->
+                    <div class="row">
+                        <div class='mc_title'>사출속도</div>
+                        <div class='mc_item'>
+                            <div class="mc_item_text" id='data57'></div>
+                            <div class="mc_item_text" id='data58'></div>
+                            <div class="mc_item_text" id='data59'></div>
+                            <div class="mc_item_text" id='data60'></div>
+                            <div class="mc_item_text" id='data61'></div>
+                            <div class="mc_item_text" id='data62'></div>
+                            <div class="mc_item_text" id='data63'></div>
+                            <div class="mc_item_text" id='data64'></div>
+                            <div class="mc_item_text" id='data65'></div>
+                            <div class="mc_item_text" id='data66'></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class='mc_title'>사출압력</div>
+                        <div class='mc_item'>
+                            <div class="mc_item_text" id='data67'></div>
+                            <div class="mc_item_text" id='data68'></div>
+                            <div class="mc_item_text" id='data69'></div>
+                            <div class="mc_item_text" id='data70'></div>
+                            <div class="mc_item_text" id='data71'></div>
+                            <div class="mc_item_text" id='data72'></div>
+                            <div class="mc_item_text" id='data73'></div>
+                            <div class="mc_item_text" id='data74'></div>
+                            <div class="mc_item_text" id='data75'></div>
+                            <div class="mc_item_text" id='data76'></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class='mc_title'>사출위치</div>
+                        <div class='mc_item'>
+                            <div class="mc_item_text" id='data77'></div>
+                            <div class="mc_item_text" id='data78'></div>
+                            <div class="mc_item_text" id='data79'></div>
+                            <div class="mc_item_text" id='data80'></div>
+                            <div class="mc_item_text" id='data81'></div>
+                            <div class="mc_item_text" id='data82'></div>
+                            <div class="mc_item_text" id='data83'></div>
+                            <div class="mc_item_text" id='data84'></div>
+                            <div class="mc_item_text" id='data85'></div>
+                            <div class="mc_item_text" id='data86'></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class='mc_title'>배럴온도</div>
+                        <div class='mc_item'>
+                            <div class="mc_item_text" id='data87'></div>
+                            <div class="mc_item_text" id='data88'></div>
+                            <div class="mc_item_text" id='data89'></div>
+                            <div class="mc_item_text" id='data90'></div>
+                            <div class="mc_item_text" id='data91'></div>
+                            <div class="mc_item_text" id='data92'></div>
+                            <div class="mc_item_text" id='data93'></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class='mc_title'>금형온도</div>
+                        <div class='mc_item'>
+                            <div class="mc_item_text" id='data94'></div>
+                            <div class="mc_item_text" id='data95'></div>
+                            <div class="mc_item_text" id='data96'></div>
+                            <div class="mc_item_text" id='data97'></div>
+                            <div class="mc_item_text" id='data98'></div>
+                            <div class="mc_item_text" id='data99'></div>
+                            <div class="mc_item_text" id='data100'></div>
+                            <div class="mc_item_text" id='data101'></div>
+                            <div class="mc_item_text" id='data102'></div>
+                            <div class="mc_item_text" id='data103'></div>
+                            <div class="mc_item_text" id='data104'></div>
+                            <div class="mc_item_text" id='data105'></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class='mc_title'>유지압력</div>
+                        <div class='mc_item'>
+                            <div class="mc_item_text" id='data106'></div>
+                            <div class="mc_item_text" id='data107'></div>
+                            <div class="mc_item_text" id='data108'></div>
+                            <div class="mc_item_text" id='data109'></div>
+                            <div class="mc_item_text" id='data110'></div>
+                        </div>
+                        <div class='mc_title'>사출시간</div>
+                        <div class='mc_item'>
+                            <div class="mc_item_text" id='data139'></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class='mc_title'>유지시간</div>
+                        <div class='mc_item'>
+                            <div class="mc_item_text" id='data111'></div>
+                            <div class="mc_item_text" id='data112'></div>
+                            <div class="mc_item_text" id='data113'></div>
+                            <div class="mc_item_text" id='data114'></div>
+                            <div class="mc_item_text" id='data115'></div>
+                        </div>
+                        <div class='mc_title'>충전시간</div>
+                        <div class='mc_item'>
+                            <div class="mc_item_text" id='data140'></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class='mc_title'>유지속도</div>
+                        <div class='mc_item'>
+                            <div class="mc_item_text" id='data116'></div>
+                            <div class="mc_item_text" id='data117'></div>
+                            <div class="mc_item_text" id='data118'></div>
+                            <div class="mc_item_text" id='data119'></div>
+                            <div class="mc_item_text" id='data120'></div>
+                        </div>
+                        <div class='mc_title'>냉각시간</div>
+                        <div class='mc_item'>
+                            <div class="mc_item_text" id='data141'></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class='mc_title'>충전위치</div>
+                        <div class='mc_item'>
+                            <div class="mc_item_text" id='data121'></div>
+                            <div class="mc_item_text" id='data122'></div>
+                            <div class="mc_item_text" id='data123'></div>
+                            <div class="mc_item_text" id='data124'></div>
+                        </div>
+                        <div class='mc_title'>석백위치</div>
+                        <div class='mc_item'>
+                            <div class="mc_item_text" id='data133'></div>
+                            <div class="mc_item_text" id='data134'></div>
+                        </div>
+                        <div class='mc_title'>SOV시간</div>
+                        <div class='mc_item'>
+                            <div class="mc_item_text" id='data137'></div>
+                        </div>
+                        <div class='mc_title'>최대스크류RPM</div>
+                        <div class='mc_item'>
+                            <div class="mc_item_text" id='data147'></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class='mc_title'>충전속도</div>
+                        <div class='mc_item'>
+                            <div class="mc_item_text" id='data125'></div>
+                            <div class="mc_item_text" id='data126'></div>
+                            <div class="mc_item_text" id='data127'></div>
+                            <div class="mc_item_text" id='data128'></div>
+                        </div>
+                        <div class='mc_title'>석백속도</div>
+                        <div class='mc_item'>
+                            <div class="mc_item_text" id='data135'></div>
+                            <div class="mc_item_text" id='data136'></div>
+                        </div>
+                        <div class='mc_title'>SOV위치</div>
+                        <div class='mc_item'>
+                            <div class="mc_item_text" id='data138'></div>
+                        </div>
+                        <div class='mc_title'>평균스크류RPM</div>
+                        <div class='mc_item'>
+                            <div class="mc_item_text" id='data148'></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class='mc_title'>백프레셔</div>
+                        <div class='mc_item'>
+                            <div class="mc_item_text" id='data129'></div>
+                            <div class="mc_item_text" id='data130'></div>
+                            <div class="mc_item_text" id='data131'></div>
+                            <div class="mc_item_text" id='data132'></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class='mc_title'>CT</div>
+                        <div class='mc_item'>
+                            <div class="mc_item_text" id='data142'></div>
+                        </div>
+                        <div class='mc_title'>클램프닫힘시간</div>
+                        <div class='mc_item'>
+                            <div class="mc_item_text" id='data143'></div>
+                        </div>
+                        <div class='mc_title'>쿠션위치</div>
+                        <div class='mc_item'>
+                            <div class="mc_item_text" id='data144'></div>
+                        </div>
+                        <div class='mc_title'>클램프열림위치</div>
+                        <div class='mc_item'>
+                            <div class="mc_item_text" id='data145'></div>
+                        </div>
+                        <div class='mc_title'>최대사출스피드</div>
+                        <div class='mc_item'>
+                            <div class="mc_item_text" id='data146'></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class='mc_title'>최대사출압력</div>
+                        <div class='mc_item'>
+                            <div class="mc_item_text" id='data149'></div>
+                        </div>
+                        <div class='mc_title'>최대스위치압력</div>
+                        <div class='mc_item'>
+                            <div class="mc_item_text" id='data150'></div>
+                        </div>
+                        <div class='mc_title'>최대복귀압력</div>
+                        <div class='mc_item'>
+                            <div class="mc_item_text" id='data151'></div>
+                        </div>
+                        <div class='mc_title'>평균복귀압력</div>
+                        <div class='mc_item'>
+                            <div class="mc_item_text" id='data152'></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- /사출기 -->
+
+            <!-- 로봇 -->
+            <!-- <div class="rb">
+                <div class="title">로봇</div>
+                <div class="rb_body">
+                    <div>제품중량</div>
+                    <div>제품온도</div>
+                </div>
+            </div> -->
+            <!-- /로봇 -->
+        </div>
+        <!-- /화면 -->
+    </div>
+
+    <script>
+    var timerID;
+
+    $(document).ready(function() {
+        updateData();
+    });
+
+    function updateData() {
+        $.ajax({
+            url: "/php/dashboard.php",
+            type: "post",
+            cache: false,
+            success: function(data) { // getvalue.php 파일에서 echo 결과값이 data 임
+
+                var array = JSON.parse(data);
+                //데이터 확인
+                // console.log(array);
+
+                let count = 1;
+                let index = 0;
+                for (; index < 151; index++) {
+                    $('#data' + count + '').html(array['' + index + '']);
+                    count++;
+                }
+
+                $('#data153').attr("src", '' + array['' + count + ''] + '');
+
+            }
+
+        });
+        timerID = setTimeout("updateData()", 1000); // 1초 단위로 갱신 처리
+
+    }
+    </script>
+</body>
+
+</html>
