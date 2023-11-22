@@ -280,94 +280,244 @@ $Average_Back_Pressure = explode('/', $row00['Average_Back_Pressure']);
 array_push($data, $allcount);
 //사출속도
 for ($i = 0; $i < 10; $i++) {
-    array_push($data, $Inj_Velocity[$i]);
+    if ($Inj_Velocity[$i] != null) {
+        array_push($data, $Inj_Velocity[$i]);
+    } else {
+        array_push($data, 'null');
+    }
 }
 for ($i = 0; $i < 10; $i++) {
-    array_push($data, $Inj_Pressure[$i]);
+    if ($Inj_Pressure[$i] != null) {
+        array_push($data, $Inj_Pressure[$i]);
+    } else {
+        array_push($data, 'null');
+    }
 }
 for ($i = 0; $i < 10; $i++) {
-    array_push($data, $Inj_Position[$i]);
+    if ($Inj_Position[$i] != null) {
+        array_push($data, $Inj_Position[$i]);
+    } else {
+        array_push($data, 'null');
+    }
 }
 for ($i = 0; $i < 7; $i++) {
-    array_push($data, $Barrel_Temperature[$i]);
+    if ($Barrel_Temperature[$i] != null) {
+        array_push($data, $Barrel_Temperature[$i]);
+    } else {
+        array_push($data, 'null');
+    }
 }
 for ($i = 0; $i < 12; $i++) {
-    array_push($data, $Mold_Temperature[$i]);
+    if ($Mold_Temperature[$i] != null) {
+        array_push($data, $Mold_Temperature[$i]);
+    } else {
+        array_push($data, 'null');
+    }
 }
 for ($i = 0; $i < 5; $i++) {
-    array_push($data, $Hld_Pressure[$i]);
+    if ($Hld_Pressure[$i] != null) {
+        array_push($data, $Hld_Pressure[$i]);
+    } else {
+        array_push($data, 'null');
+    }
 }
 for ($i = 0; $i < 5; $i++) {
-    array_push($data, $Hld_Time[$i]);
+    if ($Hld_Time[$i] != null) {
+        array_push($data, $Hld_Time[$i]);
+    } else {
+        array_push($data, 'null');
+    }
 }
 for ($i = 0; $i < 5; $i++) {
-    array_push($data, $Hld_Vel[$i]);
+    if ($Hld_Vel[$i] != null) {
+        array_push($data, $Hld_Vel[$i]);
+    } else {
+        array_push($data, 'null');
+    }
 }
 for ($i = 0; $i < 4; $i++) {
-    array_push($data, $Chg_Position[$i]);
+    if ($Chg_Position[$i] != null) {
+        array_push($data, $Chg_Position[$i]);
+    } else {
+        array_push($data, 'null');
+    }
 }
 for ($i = 0; $i < 4; $i++) {
-    array_push($data, $Chg_Speed[$i]);
+    if ($Chg_Speed[$i] != null) {
+        array_push($data, $Chg_Speed[$i]);
+    } else {
+        array_push($data, 'null');
+    }
 }
 for ($i = 0; $i < 4; $i++) {
-    array_push($data, $BackPressure[$i]);
+    if ($BackPressure[$i] != null) {
+        array_push($data, $BackPressure[$i]);
+    } else {
+        array_push($data, 'null');
+    }
 }
 for ($i = 0; $i < 2; $i++) {
-    array_push($data, $Suckback_Position[$i]);
+    if ($Suckback_Position[$i] != null) {
+        array_push($data, $Suckback_Position[$i]);
+    } else {
+        array_push($data, 'null');
+    }
 }
 for ($i = 0; $i < 2; $i++) {
-    array_push($data, $Suckback_Speed[$i]);
+    if ($Suckback_Speed[$i] != null) {
+        array_push($data, $Suckback_Speed[$i]);
+    } else {
+        array_push($data, 'null');
+    }
 }
 for ($i = 0; $i < 1; $i++) {
-    array_push($data, $SOV_Time[$i]);
+    if ($SOV_Time[$i] != null) {
+        array_push($data, $SOV_Time[$i]);
+    } else {
+        array_push($data, 'null');
+    }
 }
 for ($i = 0; $i < 1; $i++) {
-    array_push($data, $SOV_Position[$i]);
+    if ($SOV_Position[$i] != null) {
+        array_push($data, $SOV_Position[$i]);
+    } else {
+        array_push($data, 'null');
+    }
 }
 for ($i = 0; $i < 1; $i++) {
-    array_push($data, $Injection_Time[$i]);
+    if ($Injection_Time[$i] != null) {
+        array_push($data, $Injection_Time[$i]);
+    } else {
+        array_push($data, 'null');
+    }
 }
 for ($i = 0; $i < 1; $i++) {
-    array_push($data, $Filling_Time[$i]);
+    if ($Filling_Time[$i] != null) {
+        array_push($data, $Filling_Time[$i]);
+    } else {
+        array_push($data, 'null');
+    }
 }
 for ($i = 0; $i < 1; $i++) {
-    array_push($data, $Plasticizing_Time[$i]);
+    if ($Plasticizing_Time[$i] != null) {
+        array_push($data, $Plasticizing_Time[$i]);
+    } else {
+        array_push($data, 'null');
+    }
 }
 for ($i = 0; $i < 1; $i++) {
-    array_push($data, $Cycle_Time[$i]);
+    if ($Cycle_Time[$i] != null) {
+        array_push($data, $Cycle_Time[$i]);
+    } else {
+        array_push($data, 'null');
+    }
 }
 for ($i = 0; $i < 1; $i++) {
-    array_push($data, $Clamp_Close_Time[$i]);
+    if ($Clamp_Close_Time[$i] != null) {
+        array_push($data, $Clamp_Close_Time[$i]);
+    } else {
+        array_push($data, 'null');
+    }
 }
 for ($i = 0; $i < 1; $i++) {
-    array_push($data, $Cushion_Position[$i]);
+    if ($Cushion_Position[$i] != null) {
+        array_push($data, $Cushion_Position[$i]);
+    } else {
+        array_push($data, 'null');
+    }
 }
 for ($i = 0; $i < 1; $i++) {
-    array_push($data, $Clamp_Open_Position[$i]);
+    if ($Clamp_Open_Position[$i] != null) {
+        array_push($data, $Clamp_Open_Position[$i]);
+    } else {
+        array_push($data, 'null');
+    }
 }
 for ($i = 0; $i < 1; $i++) {
-    array_push($data, $Max_Injection_Speed[$i]);
+    if ($Max_Injection_Speed[$i] != null) {
+        array_push($data, $Max_Injection_Speed[$i]);
+    } else {
+        array_push($data, 'null');
+    }
 }
 for ($i = 0; $i < 1; $i++) {
-    array_push($data, $Max_Screw_RPM[$i]);
+    if ($Max_Screw_RPM[$i] != null) {
+        array_push($data, $Max_Screw_RPM[$i]);
+    } else {
+        array_push($data, 'null');
+    }
 }
 for ($i = 0; $i < 1; $i++) {
-    array_push($data, $Average_Screw_RPM[$i]);
+    if ($Average_Screw_RPM[$i] != null) {
+        array_push($data, $Average_Screw_RPM[$i]);
+    } else {
+        array_push($data, 'null');
+    }
 }
 for ($i = 0; $i < 1; $i++) {
-    array_push($data, $Max_Injection_Pressure[$i]);
+    if ($Max_Injection_Pressure[$i] != null) {
+        array_push($data, $Max_Injection_Pressure[$i]);
+    } else {
+        array_push($data, 'null');
+    }
 }
 for ($i = 0; $i < 1; $i++) {
-    array_push($data, $Max_Switch_Over_Pressure[$i]);
+    if ($Max_Switch_Over_Pressure[$i] != null) {
+        array_push($data, $Max_Switch_Over_Pressure[$i]);
+    } else {
+        array_push($data, 'null');
+    }
 }
 for ($i = 0; $i < 1; $i++) {
-    array_push($data, $Max_Back_Pressure[$i]);
+    if ($Max_Back_Pressure[$i] != null) {
+        array_push($data, $Max_Back_Pressure[$i]);
+    } else {
+        array_push($data, 'null');
+    }
 }
 for ($i = 0; $i < 1; $i++) {
-    array_push($data, $Average_Back_Pressure[$i]);
+    if ($Average_Back_Pressure[$i] != null) {
+        array_push($data, $Average_Back_Pressure[$i]);
+    } else {
+        array_push($data, 'null');
+    }
 }
 
-array_push($data, $row000['img_name']);
+$file_check = file('http://localhost:8080/img/' . $row000['img_name']);
 
+if ($file_check) {
+    $img_url = 'http://localhost:8080/img/' . $row000['img_name'];
+} else {
+    $img_url = '/img/no_image.jpg';
+}
+
+array_push($data, $img_url);
+
+
+for ($count = 1; $count <= 10; $count++) {
+
+    //검사 이력 10개 추출
+    $sql007 = "select * from result1 order by id desc limit " . $count . ", 1";
+    $res007 = mysqli_query($conn, $sql007);
+    $row007 = mysqli_fetch_array($res007);
+
+    ${$data1 . $count} = (int)$row007['data1'];
+    ${$data2 . $count} = (int)$row007['data2'];
+    ${$data3 . $count} = (int)$row007['data3'];
+    ${$data4 . $count} = (int)$row007['data4'];
+    ${$data5 . $count} = (int)$row007['data5'];
+    ${$data6 . $count} = (int)$row007['data6'];
+    ${$data7 . $count} = (int)$row007['data7'];
+    ${$data8 . $count} = (int)$row007['data8'];
+
+    array_push($data, ${$data1 . $count});
+    array_push($data, ${$data2 . $count});
+    array_push($data, ${$data3 . $count});
+    array_push($data, ${$data4 . $count});
+    array_push($data, ${$data5 . $count});
+    array_push($data, ${$data6 . $count});
+    array_push($data, ${$data7 . $count});
+    array_push($data, ${$data8 . $count});
+}
 
 echo json_encode($data);
