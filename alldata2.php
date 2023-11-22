@@ -1,33 +1,37 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>개별 데이터 그래프</title>
-    <style>
-        body {
-            background-color: #333;
-            color: #fff;
-        }
-        .chart-container {
-            max-width: 1920px;
-            margin: 0 auto;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-        .graph-box {
-            width: 23%;
-            margin: 10px 0;
-            padding: 10px;
-            border: 1px solid #555;
-            background-color: #444;
-        }
-    </style>
+    <link rel="stylesheet" href="/css/alldata2.css">
 </head>
-<body>
-    <h1>개별 데이터 그래프</h1>
 
-    <?php
+<body>
+    <!-- 전체 판넬 -->
+    <div class="wrapper">
+
+        <!-- 상단바 -->
+        <div class="top_bar">
+            <div class="logo">
+                <a class='logo_item' href="/index.html">EAST</a>
+            </div>
+            <div class="menu">
+                <a class='menu_item active' href="/index.html">대시보드</a>
+                <a class='menu_item' href="/alldata1.php">F/P 데이터</a>
+                <a class='menu_item' href="/alldata2.php">개별 데이터</a>
+                <a class='menu_item' href="/alldata3.php">AI 파라미터</a>
+                <!-- <a class='menu_item' href="/page/set1.html">실시간검사화면</a>
+        <a class='menu_item' href="/page/set2.html">검사이력</a>
+        <a class='menu_item' href="/page/set4.html">사출기화면</a>
+        <a class='menu_item' href="/page/set4.html">로봇화면</a>
+        <a class='menu_item' href="/page/set3.html">풀프루프화면</a>
+        <a class='menu_item' href="/page/set3.html">풀프루프설정</a> -->
+            </div>
+        </div>
+        <h1>개별 데이터 그래프</h1>
+
+        <?php
     // 데이터베이스 연결 설정
     $host = "127.0.0.1";
     $username = "root";
@@ -110,5 +114,7 @@
     // 데이터베이스 연결 닫기
     $conn->close();
     ?>
+    </div>
 </body>
+
 </html>

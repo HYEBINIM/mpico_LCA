@@ -1,32 +1,40 @@
 <!DOCTYPE html>
 
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>LCA 풀푸르프 데이터 시트</title>
-    <style>
-        body {
-            background-color: #333;
-            color: #fff;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px;
-        }
-        table, th, td {
-            border: 1px solid #555;
-        }
-        th, td {
-            padding: 8px;
-            text-align: left;
-        }
-    </style>
+    <link rel="stylesheet" href="/css/alldata1.css">
 </head>
-<body>
-    <h1>LCA 풀푸르프 데이터 시트</h1>
 
-    <?php
+<body>
+
+    <!-- 전체 판넬 -->
+    <div class="wrapper">
+
+        <!-- 상단바 -->
+        <div class="top_bar">
+            <div class="logo">
+                <a class='logo_item' href="/index.html">EAST</a>
+            </div>
+            <div class="menu">
+                <a class='menu_item active' href="/index.html">대시보드</a>
+                <a class='menu_item' href="/alldata1.php">F/P 데이터</a>
+                <a class='menu_item' href="/alldata2.php">개별 데이터</a>
+                <a class='menu_item' href="/alldata3.php">AI 파라미터</a>
+                <!-- <a class='menu_item' href="/page/set1.html">실시간검사화면</a>
+                <a class='menu_item' href="/page/set2.html">검사이력</a>
+                <a class='menu_item' href="/page/set4.html">사출기화면</a>
+                <a class='menu_item' href="/page/set4.html">로봇화면</a>
+                <a class='menu_item' href="/page/set3.html">풀프루프화면</a>
+                <a class='menu_item' href="/page/set3.html">풀프루프설정</a> -->
+            </div>
+        </div>
+        <!-- /상단바 -->
+        <h1>LCA 풀푸르프 데이터 시트</h1>
+
+        <?php
 
     $host = "127.0.0.1";
     $username = "root";
@@ -174,5 +182,7 @@
 
     $conn->close();
     ?>
+    </div>
 </body>
+
 </html>
